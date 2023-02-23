@@ -1,0 +1,12 @@
+.LayoutHome {
+    display: flex;
+    width: 100vw;
+}
+
+@media (max-width: 640px) {
+    .LayoutHome {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 130px 1fr;
+    }
+}

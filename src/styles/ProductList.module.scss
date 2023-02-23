@@ -1,0 +1,18 @@
+.product-list-container {
+    padding-top: 20px;
+    width: 100%;
+}
+
+.cards-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 26px;
+    place-content: center;
+}
+
+@media (max-width: 640px) {
+    .cards-container {
+    grid-template-columns: repeat(auto-fill, 140px);
+    }
+}
