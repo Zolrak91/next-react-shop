@@ -8,20 +8,18 @@ import '@styles/Header.module.scss';
 export default function App({ Component, pageProps }) {
   const initialState = useInitialState();
   return (
-      // IMPORTAR SCRIPT DE GOOGLE ANALYTICS AQUI PARA PROBAR (Despues del deploy)
-      // Script de googletagmanager
-      // El otro script
-    <AppContext.Provider value={initialState}>
-    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-5TLXYC84GH" />
-    <Script id="google-analytics">
-      {`window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-5TLXYC84GH');`}
-    </Script>
-      <Header />
-      <Component {...pageProps} />
-    </AppContext.Provider>
+    <>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-5TLXYC84GH" />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5TLXYC84GH');`}
+      </Script>
+      <AppContext.Provider value={initialState}>
+        <Header />
+        <Component {...pageProps} />
+      </AppContext.Provider>
+    </>
   );
 }

@@ -1,22 +1,18 @@
 /** @type {import('next').NextConfig} */
+
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  mode: 'production',
+  disable: false,
+});
+
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   images: {
-    domains: ['placeimg.com', 'api.lorem.space', 'i.picsum.photos', 'api.escuelajs.co'],
+    domains: ['api.lorem.space', 'cdn.pixabay.com', 'placeimg.com', 'www.libreriahuequito.com', 'thumbs.dreamstime.com'],
   },
-  // env: {
-  //   customKey: 'customValue',
-  // },
-  // compress: true,
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/hola',
-  //       destination: '/hello',
-  //       permanent: true
-  //     }
-  //   ]
-  // }
-}
+};
 
-module.exports = nextConfig
+module.exports = withPWA(nextConfig);
