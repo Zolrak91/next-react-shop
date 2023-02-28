@@ -14,7 +14,6 @@ const ProductItem = ({ product }) => {
     return (        
         <div className={styles["product-card"]}>
             <Image src={product.images[0]} alt={product.title} width={240} height={240} />
-            {console.log(product)}
             {/* EXAMPLE - Varia el array por producto */}
             {/* product.images[0] = "https://api.lorem.space/image/furniture?w=640&h=480&r=1714" */}
             {/* product.images[1] = length: 1 */}
